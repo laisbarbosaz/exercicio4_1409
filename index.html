@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xercício 4 - Solicite ao usuário o valor total da compra.</title>
+</head>
+<body>
+<h1>Cálculo do valor final da compra</h1>
+<script>
+let ValorCompra = prompt("Digite o valor total da compra:");
+ValorCompra = Number(ValorCompra);
+
+let OpcaoPagamento = prompt(
+    "Escolha a forma de pagamento: \n" +
+    "1 - Dinheiro/PIX (10% de desconto) \n" +
+    "2 - Débito (5% de desconto) \n" +
+    "3 - Crédito (sem desconto) \n"
+);
+
+OpcaoPagamento = Number(OpcaoPagamento);
+let ValorFinal;
+
+switch (OpcaoPagamento) {
+  case 1:
+    ValorFinal = ValorCompra - (ValorCompra * 0.10);
+    break;
+  case 2:
+    ValorFinal = ValorCompra - (ValorCompra * 0.05);
+    break;
+  case 3:
+    ValorFinal = ValorCompra;
+    break;
+  default:
+    ValorFinal = null;
+}
+
+if (ValorFinal === null) {
+    document.write("<h2>Opção inválida! Escolha 1, 2 ou 3.</h2>");
+} else {
+    document.write("<h2>Valor final: R$ " + ValorFinal.toFixed(2) + "</h2>");
+}
+</script>
+</body>
+</html>
